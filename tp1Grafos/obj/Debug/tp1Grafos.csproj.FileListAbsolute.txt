@@ -1,0 +1,7 @@
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\obj\Debug\tp1Grafos.csprojResolveAssemblyReference.cache
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\obj\Debug\tp1Grafos.csproj.CoreCompileInputs.cache
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\bin\Debug\tp1Grafos.exe.config
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\bin\Debug\tp1Grafos.exe
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\bin\Debug\tp1Grafos.pdb
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\obj\Debug\tp1Grafos.exe
+C:\Users\vitor\Desktop\PUC\2018 -1\grafos\tp1Grafos\tp1Grafos\obj\Debug\tp1Grafos.pdb
