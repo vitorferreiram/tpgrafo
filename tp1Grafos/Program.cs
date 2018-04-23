@@ -31,7 +31,7 @@ namespace tp1Grafos
                         Console.WriteLine("Defina a quantidade de vertices: ");
                         int qtdVertices = int.Parse(Console.ReadLine());
 
-                        //GrafoMA(qtdVertices);
+                        GrafoMA grafoMA = new GrafoMA(qtdVertices);
                         
                         //opções da matriz de adjacência
                         do
@@ -72,6 +72,8 @@ namespace tp1Grafos
                                     Console.WriteLine("Digite o valor da segunda aresta: ");
                                     int v2 = int.Parse(Console.ReadLine());
 
+                                    Console.WriteLine(grafoMA.InserirAresta(v1,v2));
+                                    Console.ReadKey();
 
                                     break;
 
@@ -86,9 +88,43 @@ namespace tp1Grafos
                                     Console.WriteLine("Digite o valor da segunda aresta: ");
                                     v2 = int.Parse(Console.ReadLine());
 
+                                    Console.WriteLine(grafoMA.RemoverAresta(v1, v2));
+                                    Console.ReadKey();
 
                                     break;
 
+                                case (3): //ORDEM
+                                    Console.WriteLine("A ordem do grafo é igual a "+grafoMA.Ordem());
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (8):
+                                    Console.Clear();
+                                    Console.WriteLine("Lista de adjacência: \n\n");
+
+                                    grafoMA.ShowLA();
+
+                                    Console.WriteLine("\n\nAperte qualquer tecla para voltar");
+                                    Console.ReadKey();
+                                    break;
+
+                                case (14): //ADJACENTES
+                                    Console.Clear();
+                                    Console.WriteLine("- Adjacentes - \n\n");
+
+
+                                    Console.WriteLine("Digite o valor da primeira aresta: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("Digite o valor da segunda aresta: ");
+                                    v2 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Adjacentes(v1,v2));
+                                    Console.ReadKey();
+
+                                    break;
+                                    
                                 case (0):
 
                                     break;

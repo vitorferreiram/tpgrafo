@@ -6,72 +6,127 @@ using System.Threading.Tasks;
 
 namespace tp1Grafos
 {
-    /*class GrafoMA
+    class GrafoMA
     {
         private int[,] MA;
         private int qtVertices;
 
 
-        public GrafoMA(int qtVertices)
+        public GrafoMA(int qtVertices)//inicializa o grafo
         {
-            return;
+            this.qtVertices = qtVertices;
+
+            MA = new int[qtVertices, qtVertices];
         }
 
-        public int Ordem()
+        public int Ordem()//quantidade de vertices
         {
-            return;
+            int ordem = 0;
+
+            ordem = qtVertices;
+
+            return ordem;
         }
-        public bool InserirAresta(int v1, int v2)
+        public bool InserirAresta(int v1, int v2)//verifica se pode inserir e retorna status
         {
-            return;
+            bool status = false;
+
+            if (v1 < qtVertices && v2 < qtVertices)
+            {
+                status = true;
+                MA[v1, v2] = 1;
+            }
+
+            return status;
         }
-        public bool RemoverAresta(int v1, int v2)
+        public bool RemoverAresta(int v1, int v2)//verifica se pode remover e retorna status
         {
-            return;
+            bool status = false;
+
+            if (v1 < qtVertices && v2 < qtVertices)
+            {
+                status = true;
+                MA[v1, v2] = 0;
+            }
+
+            return status;
         }
         public int Grau(int vertice)
         {
-            return;
+            int grau = 0;
+
+
+            return grau;
         }
         public bool Completo()
         {
-            return;
+            bool status = false;
+
+            return status;
         }
         public bool Regular()
         {
-            return;
+            bool status = false;
+
+            return status;
         }
         public void ShowMA()
         {
-            return;
+            
         }
         public void ShowLA()
         {
-            return;
+            for (int i = 0; i < qtVertices; i++)
+            {
+                Console.Write(i + ": ");
+
+                for (int j = 0; j < qtVertices; j++)
+                {
+                    Console.Write(MA[i,j]+" ");
+                    
+                }
+                Console.Write("\n");
+            }
+
+
         }
         public void SequenciaGraus()
         {
-            return;
+            
         }
         public void VerticesAdjacentes(int vertice)
         {
-            return;
+           
         }
         public bool Isolado(int vertice)
         {
-            return;
+            bool status = false;
+
+            return status;
         }
         public bool Impar(int vertice)
         {
-            return;
+            bool status = false;
+
+            return status;
         }
         public bool Par(int vertice)
         {
-            return;
+            bool status = false;
+
+            return status;
         }
         public bool Adjacentes(int v1, int v2)
         {
-            return;
+            bool status;
+
+            if (MA[v1, v2] == 1)
+                status = true;
+            else
+                status = false;
+
+
+            return status;
         }
-    }*/
+    }
 }
