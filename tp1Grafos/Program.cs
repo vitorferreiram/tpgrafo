@@ -99,6 +99,15 @@ namespace tp1Grafos
 
                                     break;
 
+                                case (4): //GRAU
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("O grau do vértice é " + grafoMA.Grau(v1));
+                                    Console.ReadKey();
+
+                                    break;
+
                                 case (8):
                                     Console.Clear();
                                     Console.WriteLine("Lista de adjacência: \n\n");

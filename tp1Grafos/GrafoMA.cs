@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp1Grafos
 {
-    class GrafoMA
+    class GrafoMA //VITOR
     {
         private int[,] MA;
         private int qtVertices;
@@ -55,7 +55,12 @@ namespace tp1Grafos
         {
             int grau = 0;
 
-
+            for (int i = 0; i < qtVertices; i++)
+            {
+                if (MA[vertice, i] != 0)
+                    grau++;
+            }
+            
             return grau;
         }
         public bool Completo()
