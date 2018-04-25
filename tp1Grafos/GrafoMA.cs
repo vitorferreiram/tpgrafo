@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace tp1Grafos
 {
@@ -10,8 +11,7 @@ namespace tp1Grafos
     {
         private int[,] MA;
         private int qtVertices;
-
-
+        
         public GrafoMA(int qtVertices)//inicializa o grafo
         {
             this.qtVertices = qtVertices;
@@ -34,7 +34,7 @@ namespace tp1Grafos
             if (v1 < qtVertices && v2 < qtVertices)
             {
                 status = true;
-                MA[v1, v2] = 1;
+                MA[v1, v2] = v2;
             }
 
             return status;
@@ -51,7 +51,7 @@ namespace tp1Grafos
 
             return status;
         }
-        public int Grau(int vertice)
+        public int Grau(int vertice)//quantidade de arestas ligadas no vertice
         {
             int grau = 0;
 
@@ -69,27 +69,71 @@ namespace tp1Grafos
 
             return status;
         }
-        public bool Regular()
+
+        public bool Regular()//todos graus iguais = true
         {
-            bool status = false;
+            int[] vetRegular = new int[qtVertices];
+            bool status = true;
+
+            int grau = 0;
+
+            for (int i = 0; i < qtVertices; i++)
+            {
+                grau = 0;
+                for (int j = 0; j < qtVertices; j++)
+                {
+                    if (MA[i, i] != 0)
+                        grau++;
+                }
+                vetRegular[i] = grau;
+            }
+
+            int num = 0;
+            for (int i = 0; i < vetRegular.Length; i++)
+            {
+                num = vetRegular[i];
+
+                for (int p = 0; p < vetRegular.Length; p++)
+                {
+                    if (!vetRegular[p].Equals(num))
+                    {
+                        status = false;
+                        break;
+                    }
+                }
+            }
 
             return status;
         }
-        public void ShowMA()
+        public void ShowMA()//matriz de ajacencia
         {
-            
+            for (int i = 0; i < qtVertices; i++)
+            {
+                for (int j = 0; j < qtVertices; j++)
+                {
+                    if (MA[i, j] != 0)
+                        Console.Write("1 ");
+                    else
+                        Console.Write(MA[i, j] + " ");
+                }
+                Console.Write("\n");
+            }
         }
-        public void ShowLA()
-        {
+        
+        public void ShowLA()//lista de ajacencia
+        {   
+
             for (int i = 0; i < qtVertices; i++)
             {
                 Console.Write(i + ": ");
 
                 for (int j = 0; j < qtVertices; j++)
                 {
-                    Console.Write(MA[i,j]+" ");
-                    
+                    if(MA[i, j] != 0)
+                        Console.Write(MA[i, j] + " ");
+
                 }
+
                 Console.Write("\n");
             }
 
@@ -103,25 +147,58 @@ namespace tp1Grafos
         {
            
         }
-        public bool Isolado(int vertice)
+        public bool Isolado(int vertice)//se não possui aresta = true
         {
-            bool status = false;
+            bool status = true;
+            int qtd = 0;
+
+            for (int i = 0; i < qtVertices; i++)
+            {
+                if (MA[vertice, i] != 0)
+                    qtd++;
+            }
+
+            if (qtd > 0)
+                status = false;
+           
 
             return status;
         }
-        public bool Impar(int vertice)
+        public bool Impar(int vertice)//quantidade de arestas ligadas ao vertice, impar = true
         {
             bool status = false;
 
-            return status;
-        }
-        public bool Par(int vertice)
-        {
-            bool status = false;
+            int qtd = 0;
+
+            for (int i = 0; i < qtVertices; i++)
+            {
+                if (MA[vertice, i] != 0)
+                    qtd++;
+            }
+
+            if (qtd % 2 != 0)
+                status = true;
 
             return status;
         }
-        public bool Adjacentes(int v1, int v2)
+        public bool Par(int vertice)//quantidade de arestas ligadas ao vertice, par = true
+        {
+            bool status = false;
+
+            int qtd = 0;
+
+            for (int i = 0; i < qtVertices; i++)
+            {
+                if (MA[vertice, i] != 0)
+                    qtd++;
+            }
+
+            if (qtd%2 == 0)
+                status = true;
+
+            return status;
+        }
+        public bool Adjacentes(int v1, int v2)//verifica se dois vertices são adjacentes
         {
             bool status;
 
