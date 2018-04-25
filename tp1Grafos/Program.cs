@@ -47,7 +47,7 @@ namespace tp1Grafos
                             Console.WriteLine("7. Exibir MA");
                             Console.WriteLine("8. Exibir LA");
                             Console.WriteLine("9. Sequência de graus");
-                            Console.WriteLine("10. Vertices adjacentes");
+                            Console.WriteLine("10. Vértices adjacentes");
                             Console.WriteLine("11. Isolado");
                             Console.WriteLine("12. Impar");
                             Console.WriteLine("13. Par");
@@ -108,6 +108,12 @@ namespace tp1Grafos
 
                                     break;
 
+                                case (5): //COMPLETO
+                                    Console.WriteLine(grafoMA.Completo());
+                                    Console.ReadKey();
+
+                                    break;
+
                                 case (6): //REGULAR
                                     Console.WriteLine("- Grafo Regular - ");
                                     
@@ -134,6 +140,26 @@ namespace tp1Grafos
 
                                     Console.WriteLine("\n\nAperte qualquer tecla para voltar");
                                     Console.ReadKey();
+                                    break;
+
+                                case (9): //SEQUÊNCIA DE GRAUS
+                                    Console.WriteLine("- Sequência de graus -\n\n");
+
+                                    grafoMA.SequenciaGraus();
+                                    
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (10): //VÉRTICES ADJACENTES
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("- Vértices adjacentes a "+v1+" -\n\n");
+                                    grafoMA.VerticesAdjacentes(v1);
+
+                                    Console.ReadKey();
+
                                     break;
 
                                 case (11): //ISOLADO
