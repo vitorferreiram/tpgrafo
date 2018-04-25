@@ -16,7 +16,7 @@ namespace tp1Grafos
             {
                 Console.WriteLine("1. Matriz de Adjacência");
                 Console.WriteLine("2. Lista de Adjacência");
-                Console.WriteLine("0. Sair");
+                Console.WriteLine("\n0. Sair");
 
                 Console.WriteLine("\n\nDigite a opção desejada: ");
                 opcao = int.Parse(Console.ReadLine());
@@ -54,7 +54,7 @@ namespace tp1Grafos
                             Console.WriteLine("14. Adjacentes");
 
 
-                            Console.WriteLine("0. Sair");
+                            Console.WriteLine("\n0. Sair");
 
                             Console.WriteLine("\n\nDigite a opção desejada: ");
                             opcao = int.Parse(Console.ReadLine());
@@ -108,7 +108,25 @@ namespace tp1Grafos
 
                                     break;
 
-                                case (8):
+                                case (6): //REGULAR
+                                    Console.WriteLine("- Grafo Regular - ");
+                                    
+                                    Console.WriteLine(grafoMA.Regular());
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (7)://Matriz de adjacência
+                                    Console.Clear();
+                                    Console.WriteLine("Matriz de adjacência: \n\n");
+
+                                    grafoMA.ShowMA();
+
+                                    Console.WriteLine("\n\nAperte qualquer tecla para voltar");
+                                    Console.ReadKey();
+                                    break;
+
+                                case (8)://Lista de adjacência
                                     Console.Clear();
                                     Console.WriteLine("Lista de adjacência: \n\n");
 
@@ -116,6 +134,33 @@ namespace tp1Grafos
 
                                     Console.WriteLine("\n\nAperte qualquer tecla para voltar");
                                     Console.ReadKey();
+                                    break;
+
+                                case (11): //ISOLADO
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Isolado(v1));
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (12): //IMPAR
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Impar(v1));
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (13): //PAR
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Par(v1));
+                                    Console.ReadKey();
+
                                     break;
 
                                 case (14): //ADJACENTES
