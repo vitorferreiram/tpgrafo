@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 
 namespace tp1Grafos
-{
+{   //-----------------------------------------CAROL MEXA NESSA CLASSE
     /*class GrafoLA
     {
         private ArrayList LA;

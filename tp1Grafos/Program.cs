@@ -16,7 +16,7 @@ namespace tp1Grafos
             {
                 Console.WriteLine("1. Matriz de Adjacência");
                 Console.WriteLine("2. Lista de Adjacência");
-                Console.WriteLine("0. Sair");
+                Console.WriteLine("\n0. Sair");
 
                 Console.WriteLine("\n\nDigite a opção desejada: ");
                 opcao = int.Parse(Console.ReadLine());
@@ -47,14 +47,14 @@ namespace tp1Grafos
                             Console.WriteLine("7. Exibir MA");
                             Console.WriteLine("8. Exibir LA");
                             Console.WriteLine("9. Sequência de graus");
-                            Console.WriteLine("10. Vertices adjacentes");
+                            Console.WriteLine("10. Vértices adjacentes");
                             Console.WriteLine("11. Isolado");
                             Console.WriteLine("12. Impar");
                             Console.WriteLine("13. Par");
                             Console.WriteLine("14. Adjacentes");
 
 
-                            Console.WriteLine("0. Sair");
+                            Console.WriteLine("\n0. Sair");
 
                             Console.WriteLine("\n\nDigite a opção desejada: ");
                             opcao = int.Parse(Console.ReadLine());
@@ -94,12 +94,49 @@ namespace tp1Grafos
                                     break;
 
                                 case (3): //ORDEM
+                                    Console.Clear();
                                     Console.WriteLine("A ordem do grafo é igual a "+grafoMA.Ordem());
                                     Console.ReadKey();
 
                                     break;
 
-                                case (8):
+                                case (4): //GRAU
+                                    Console.Clear();
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("O grau do vértice é " + grafoMA.Grau(v1));
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (5): //COMPLETO
+                                    Console.Clear();
+                                    Console.WriteLine(grafoMA.Completo());
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (6): //REGULAR
+                                    Console.Clear();
+                                    Console.WriteLine("- Grafo Regular - ");
+                                    
+                                    Console.WriteLine(grafoMA.Regular());
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (7)://Matriz de adjacência
+                                    Console.Clear();
+                                    Console.WriteLine("Matriz de adjacência: \n\n");
+
+                                    grafoMA.ShowMA();
+
+                                    Console.WriteLine("\n\nAperte qualquer tecla para voltar");
+                                    Console.ReadKey();
+                                    break;
+
+                                case (8)://Lista de adjacência
                                     Console.Clear();
                                     Console.WriteLine("Lista de adjacência: \n\n");
 
@@ -107,6 +144,58 @@ namespace tp1Grafos
 
                                     Console.WriteLine("\n\nAperte qualquer tecla para voltar");
                                     Console.ReadKey();
+                                    break;
+
+                                case (9): //SEQUÊNCIA DE GRAUS
+                                    Console.Clear();
+                                    Console.WriteLine("- Sequência de graus -\n\n");
+
+                                    grafoMA.SequenciaGraus();
+                                    
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (10): //VÉRTICES ADJACENTES
+                                    Console.Clear();
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine("- Vértices adjacentes a "+v1+" -\n\n");
+                                    grafoMA.VerticesAdjacentes(v1);
+
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (11): //ISOLADO
+                                    Console.Clear();
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Isolado(v1));
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (12): //IMPAR
+                                    Console.Clear();
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Impar(v1));
+                                    Console.ReadKey();
+
+                                    break;
+
+                                case (13): //PAR
+                                    Console.Clear();
+                                    Console.WriteLine("Digite o vértice desejado: ");
+                                    v1 = int.Parse(Console.ReadLine());
+
+                                    Console.WriteLine(grafoMA.Par(v1));
+                                    Console.ReadKey();
+
                                     break;
 
                                 case (14): //ADJACENTES
