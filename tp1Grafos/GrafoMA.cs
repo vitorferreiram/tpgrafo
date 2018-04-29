@@ -63,27 +63,26 @@ namespace tp1Grafos
             
             return grau;
         }
-        public bool Completo()//informa se o grafo é completo -- NÃO ESTA FUNCIONANDO!
+        public bool Completo()//informa se o grafo é completo
         {
             bool status = false;
-            //int num;
-            
+            int aux, cont = 0;
+
             for (int i = 0; i < qtVertices; i++)
             {
-
                 for (int j = 0; j < qtVertices; j++)
                 {
-                    if (MA[i, j] == 1)
-                        status = true;
-                    else if (MA[i, i] == 0)
-                        status = true;
-                    else
-                        return false;
-
+                    if (MA[j, i] == 1)
+                        cont++;
                 }
 
             }
 
+            aux = qtVertices * (qtVertices - 1) / 2;
+            if (aux == cont)
+            {
+                status = true;
+            }
 
             return status;
         }
