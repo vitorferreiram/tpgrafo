@@ -7,6 +7,7 @@ using System.Collections;
 
 namespace tp1Grafos
 {   //-----------------------------------------CAROL MEXA NESSA CLASSE
+    //teste lalalala
     /*class GrafoLA
     {
         private ArrayList LA;
