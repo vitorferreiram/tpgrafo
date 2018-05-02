@@ -231,9 +231,6 @@ namespace tp1Grafos
                 Console.Clear();
                 Console.WriteLine("- Lista de Adjacencia -\n\n");
 
-                Console.WriteLine("Defina a quantidade de vertices: ");
-                int nVertices = int.Parse(Console.ReadLine());
-
                 GrafoLA grafoLA = new GrafoLA();
 
                 //opções da lista de adjacencia 

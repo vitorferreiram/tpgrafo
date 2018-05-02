@@ -10,9 +10,7 @@ namespace tp1Grafos
 
     class GrafoLA // Carolina
     {
-        private ArrayList LA;
-        private int nVertices;
-        
+        private ArrayList LA;     
 
         public GrafoLA()
         {     
@@ -35,12 +33,12 @@ namespace tp1Grafos
             KeyValuePair<int, List<int>> v = new KeyValuePair<int, List<int>>(vertice, new List<int>());
             if (this.LA.Contains(v))
             {
-                return true;
+                return false;
             }
             else
             {
                 this.LA.Add(v);
-                return false;
+                return true;
             }
             
             
@@ -51,11 +49,11 @@ namespace tp1Grafos
             if (this.LA.Contains(v))
             {
                 LA.Remove(v);
-                return false;
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
             
         }
@@ -161,11 +159,13 @@ namespace tp1Grafos
         }
         public void VerticesAdjacentes(int vertice)
         {
+            Console.Write(vertice + ": ");
             foreach (KeyValuePair<int, List<int>> v in this.LA)
             {
                 if(v.Key == vertice)
                 {
-                    Console.WriteLine(v.Value);
+                    foreach(int a in v.Value)
+                        Console.Write(a + " ");
                 }
             }
                
@@ -190,7 +190,7 @@ namespace tp1Grafos
         }
         public bool Impar(int vertice)
         {
-            int nGrau = 1;
+            int nGrau = 0;
             foreach (KeyValuePair<int, List<int>> v in this.LA)
             {
                 if (v.Key == vertice)
@@ -208,7 +208,7 @@ namespace tp1Grafos
         }
         public bool Par(int vertice)
         {
-            int nGrau = 1;
+            int nGrau = 0;
             foreach (KeyValuePair<int, List<int>> v in this.LA)
             {
                 if (v.Key == vertice)
