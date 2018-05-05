@@ -58,19 +58,21 @@ namespace tp1Grafos
             
         }
         public bool InserirAresta(int v1, int v2)
-        {
-            foreach(KeyValuePair<int, List<int>> v in this.LA)
+        {       
+
+            foreach (KeyValuePair<int, List<int>> v in this.LA)
             {
+                
                 if(v.Key == v1)
                 {
                     v.Value.Add(v2);
                     return true;
 
                 }
-                else
-                {
-                    return false;
-                }
+                //else
+                //{
+                //    return false;
+                //}
               
             }
             return false;
@@ -151,11 +153,38 @@ namespace tp1Grafos
         }
         public void ShowLA()
         {
-            return;
+            
+            foreach (KeyValuePair<int, List<int>> v in this.LA)
+            {
+
+                Console.Write(v.Key + ": ");
+
+                foreach (int b in v.Value)
+                {
+                    Console.Write(b + ", ");
+                }
+                Console.Write("\n");
+                
+            }
+
         }
         public void SequenciaGraus()
         {
-            return;
+            List<int> seq = new List<int>();
+            foreach (KeyValuePair<int, List<int>> v in this.LA)
+            {
+
+                seq.Add(v.Value.Count());
+                
+            }
+
+            seq.Sort();
+            foreach(int a in seq)
+            {
+                Console.Write(a + ", ");
+
+            }
+
         }
         public void VerticesAdjacentes(int vertice)
         {
@@ -190,14 +219,14 @@ namespace tp1Grafos
         }
         public bool Impar(int vertice)
         {
-            int nGrau = 0;
+            int impar = 0;
             foreach (KeyValuePair<int, List<int>> v in this.LA)
             {
                 if (v.Key == vertice)
                 {
-                    nGrau = v.Value.Count;
+                    impar = v.Value.Count;
                 }
-                if (nGrau % 2 != 0)
+                if (impar % 2 != 0)
                 {
                     return true;
                 }
@@ -208,14 +237,14 @@ namespace tp1Grafos
         }
         public bool Par(int vertice)
         {
-            int nGrau = 0;
+            int par = 0;
             foreach (KeyValuePair<int, List<int>> v in this.LA)
             {
                 if (v.Key == vertice)
                 {
-                    nGrau = v.Value.Count;
+                    par = v.Value.Count;
                 }
-                if (nGrau % 2 == 0)
+                if (par % 2 == 0)
                 {
                     return true;
                 }
@@ -225,8 +254,26 @@ namespace tp1Grafos
         }
         public bool Adjacentes(int v1, int v2)
         {
+            bool status;
+            foreach (KeyValuePair<int, List<int>> v in this.LA)
+            {
+                if (v.Key == v1) 
+                {
+                    status = v.Value.Contains(v2);
+                    return status;
+                }
+                else if (v.Key == v2)
+                {
+                    status = v.Value.Contains(v1);
+                    return status;
+                }
+                else
+                {
+                    return false;
+                }
+            }
 
-            return true;
+            return false;
         }
 
     }

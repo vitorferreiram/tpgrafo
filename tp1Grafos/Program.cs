@@ -373,6 +373,7 @@ namespace tp1Grafos
                         case (11):// Vertices Adjacentes
                             Console.Clear();
                             Console.WriteLine("Digite o vértice desejado: ");
+
                             v1 = int.Parse(Console.ReadLine());
 
                             Console.WriteLine("- Vértices adjacentes a " + v1 + " -\n\n");
